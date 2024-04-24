@@ -1,0 +1,9 @@
+services:
+  go:
+    build: ./
+    container_name: demo_go
+    volumes:
+      - type: bind
+        source: ./src/
+        target: /var/www/src
+    tty: true
