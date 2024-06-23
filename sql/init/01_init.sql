@@ -7,3 +7,7 @@ create table todo_list(
     deleted_at timestamptz,
     primary key(id)
 );
+
+insert into todo_list values
+(1, 'test', false)
+;
