@@ -1,7 +1,3 @@
--- create database demo_db;
-
--- \c demo_db;
-
 create table todo_list(
     id integer,
     title varchar(64) not null,
