@@ -9,3 +9,23 @@ services:
     ports:
       - "8080:8080"
     tty: true
+
+  db:
+    image: postgres:15-bullseye
+    container_name: demo_db
+    ports:
+      - "15432:5432"
+    volumes:
+      - type: bind
+        source: ./sql/init
+        target: /docker-entrypoint-initdb.d
+      - type: volume
+        source: github-actions-demo-db
+        target: /var/lib/postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_INTIDB_ARGS: "--encording=UTF-8"
+
+volumes:
+  github-actions-demo-db:
