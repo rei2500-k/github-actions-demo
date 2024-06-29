@@ -5,7 +5,7 @@ GitHub Actions, Goを学ぶ目的でToDoリストを作成する。
 1. コンテナ起動  
 `docker compose up -d`
 
-2. コンテナに入る  
+2. Goコンテナに入る  
 `docker compose exec go bash`
 
 3. HTTPサーバ起動  
@@ -21,8 +21,22 @@ ___
 1. コンテナ起動  
 `docker compose up -d`
 
-2. コンテナに入る  
+2. DBコンテナに入る  
 `docker compose exec db bash`
 
 3. postgrsqlログイン  
 `psql -U postgres`
+
+
+## テスト
+1. コンテナ起動  
+`docker compose up -d`
+
+2. Goコンテナに入る  
+`docker compose exec db bash`
+
+3. テスト実行ディレクトリに移動  
+`cd src`
+
+4. テスト実行  
+`go test ./... -v`
